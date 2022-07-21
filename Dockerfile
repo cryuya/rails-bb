@@ -5,7 +5,7 @@ ARG DOCKER_USER=docker
 ARG DOCKER_PASSWORD=docker
 RUN useradd -m --uid ${DOCKER_UID} --groups sudo ${DOCKER_USER} \
 && echo ${DOCKER_USER}:${DOCKER_PASSWORD} | chpasswd
-RUN apt update && apt install sudo
+RUN apt update && apt install -y sudo default-mysql-client
 RUN echo 'Defaults visiblepw'             >> /etc/sudoers
 RUN echo 'docker ALL=(ALL) NOPASSWD:ALL'  >> /etc/sudoers
 
