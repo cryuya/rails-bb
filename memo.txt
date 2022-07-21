@@ -1,0 +1,4 @@
+docker-compose run web rails new . --force --no-deps --database=mysql
+docker-compose build
+dbファイルの設定
+docker-compose run web rails db:create
